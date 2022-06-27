@@ -1,10 +1,13 @@
 {
-  "name": "rollup-module",
+  "name": "module-exercise-rollup",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "nodejs module using rollup",
+  "main": "lib/bundle.umd.js",
+  "module": "lib/bundle.esm.js",
   "scripts": {
-    "build": "rollup -c rollup.config.js",
+    "clean": "rm -rf lib",
+    "build": "yarn clean && rollup -c rollup.config.js",
+    "prepare": "yarn build",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
@@ -12,5 +15,8 @@
   "license": "ISC",
   "devDependencies": {
     "rollup": "^2.75.7"
-  }
+  },
+  "files": [
+    "lib"
+  ]
 }
